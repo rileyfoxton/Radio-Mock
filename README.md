@@ -1,4 +1,4 @@
-# 💫 About Me:
+# 🦊 About Me:
 Projects here are for fun and competitiveness, I like music (Live 885 Radio!) and games, love taking on a new challenge
 
 
