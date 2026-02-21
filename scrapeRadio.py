@@ -17,6 +17,8 @@ with open("record.json", "r") as record:
 with open("record_songs.json", "r") as song_record:
     song_record = json.load(song_record)
 
+#getting Station name
+stationName = record["station_name"]
 #Setting up request
 baseurl = record["baseurl"]
 headers = {
@@ -58,12 +60,12 @@ while days_since >= 0:
             archiveSong["last_played"] = current_song["last_played"]
     
     #write a file with the days information
-    with open("live885-"+dateday+".json", "w") as file:
+    with open(stationName+"-"+dateday+".json", "w") as file:
         file.write(json.dumps(data, indent=4))
     
     days_since -= 1
 
-last_updated = {"last_updated":{"day": current.day, "month": current.month, "year": current.year}, "baseurl": baseurl}
+last_updated = {"last_updated":{"day": current.day, "month": current.month, "year": current.year}, "baseurl": baseurl, "station_name": stationName}
 
 #update the record to note the last update
 with open("record_songs.json", "w") as record:
